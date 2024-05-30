@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Hamburguesa</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>body {
+      overflow-x: hidden;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+  }
+  
+  .navbar {
+      background-color: #333;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      position: relative;
+  }
+  
+  .menu-toggle {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+  }
+  
+  .menu-toggle .bar {
+      width: 25px;
+      height: 3px;
+      background-color: #fff;
+      margin: 4px 0;
+      transition: 0.4s;
+  }
+  
+  .nav-list {
+      list-style: none;
+      position: absolute;
+      top: 60px;
+      right: -100%;
+      width: 20%;
+      height: 100vh;
+      background-color: #333;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+      transition: 0.5s;
+      overflow: hidden;
+  }
+  
+  .nav-item {
+      margin: 1rem ;
+  }
+  
+  .nav-link {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.5rem;
+  }
+  
+  .nav-link:hover {
+      color: #ddd;
+  }
+  
+  .nav-list.active {
+      right: 0;
+
+  }
+  
+  </style>
+  
+</head>
+<body>
+    <nav class="navbar">
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="nav-list">
+            <li class="nav-item"><a href="#" class="nav-link">Inicio</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Servicios</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Acerca de</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <script>const menuToggle = document.getElementById('mobile-menu');
+      const navList = document.querySelector('.nav-list');
+      const body = document.body;
+      
+      menuToggle.addEventListener('click', () => {
+          navList.classList.toggle('active');
+      });
+      </script>
+</body>
+</html>
